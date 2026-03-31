@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --font-satoshi: 'Satoshi', sans-serif;
+  --color-brand: #D4FF3E;
+  --color-brand-light: #E5F5E0;
+  --color-card: #111111;
+  --color-card-border: #222222;
+}
+
+@utility mask-image-b {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
