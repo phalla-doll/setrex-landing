@@ -88,12 +88,12 @@ export default function Home() {
           Fintech is its potential to promote financial inclusion. In many parts of the world, millions of people lack access to traditional banking services.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <a href="#" className="flex items-center gap-2 px-8 py-4 bg-brand text-black font-semibold rounded-full hover:bg-[#c2eb35] transition-colors">
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto max-w-md mx-auto sm:max-w-none">
+          <a href="#" className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-brand text-black font-semibold rounded-full hover:bg-[#c2eb35] transition-colors">
             <ArrowRight className="w-5 h-5" />
             Get Started Now
           </a>
-          <a href="#" className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors">
+          <a href="#" className="w-full sm:w-auto px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-center">
             See Pricing
           </a>
         </div>
@@ -117,11 +117,11 @@ export default function Home() {
 
       {/* Services / Features Bento Grid */}
       <section className="py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto border-t border-white/5">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-2xl leading-[1.1]">
             Elevate your digital presence with our core services
           </h2>
-          <p className="text-gray-400 max-w-sm text-lg">
+          <p className="text-gray-400 max-w-sm text-lg md:text-right">
             We combine strategy, design, and technology to build scalable solutions that drive growth.
           </p>
         </div>
@@ -188,7 +188,7 @@ export default function Home() {
             <ul className="space-y-4">
               {['End-to-end encryption', 'SOC2 Type II Certified', '24/7 Threat monitoring'].map((item, idx) => (
                 <li key={idx} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center shrink-0">
                     <div className="w-2 h-2 rounded-full bg-brand"></div>
                   </div>
                   <span className="text-gray-300 font-medium">{item}</span>
@@ -231,9 +231,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex items-center justify-between mt-auto">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mt-auto">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden relative border border-white/10">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative border border-white/10 shrink-0">
                   <Image 
                     src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" 
                     alt="Emily R" 
@@ -437,7 +437,7 @@ export default function Home() {
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mb-12">
             Join hundreds of forward-thinking companies building the future of finance and technology with Setrex.
           </p>
-          <a href="#" className="flex items-center gap-2 px-10 py-5 bg-brand text-black text-lg font-bold rounded-full hover:bg-[#c2eb35] hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(212,255,62,0.3)]">
+          <a href="#" className="flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-5 bg-brand text-black text-lg font-bold rounded-full hover:bg-[#c2eb35] hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(212,255,62,0.3)]">
             Start your journey <ArrowRight className="w-5 h-5" />
           </a>
         </div>
@@ -467,7 +467,7 @@ export default function Home() {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-50 p-3 bg-brand text-black rounded-full shadow-[0_0_20px_rgba(212,255,62,0.3)] hover:bg-[#c2eb35] hover:scale-110 transition-all duration-300 ${
+        className={`fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 p-3 bg-brand text-black rounded-full shadow-[0_0_20px_rgba(212,255,62,0.3)] hover:bg-[#c2eb35] hover:scale-110 transition-all duration-300 ${
           showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         aria-label="Back to top"
