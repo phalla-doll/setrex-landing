@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, ArrowUpRight, Shield, Zap, Globe, Layers, BarChart3 } from "lucide-react";
 
 export default function Home() {
   return (
@@ -92,8 +92,103 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services / Features Bento Grid */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto border-t border-white/5">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-2xl leading-[1.1]">
+            Elevate your digital presence with our core services
+          </h2>
+          <p className="text-gray-400 max-w-sm text-lg">
+            We combine strategy, design, and technology to build scalable solutions that drive growth.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Service 1 */}
+          <div className="group p-8 md:p-10 rounded-[32px] bg-card border border-card-border hover:border-brand/50 transition-colors relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-[50px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <Layers className="w-10 h-10 text-brand mb-8" />
+            <h3 className="text-2xl font-bold mb-4">Digital Strategy</h3>
+            <p className="text-gray-400 leading-relaxed mb-8">
+              We help you define your digital roadmap, identifying opportunities for growth and innovation.
+            </p>
+            <a href="#" className="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-brand transition-colors">
+              Learn more <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          {/* Service 2 */}
+          <div className="group p-8 md:p-10 rounded-[32px] bg-card border border-card-border hover:border-brand/50 transition-colors relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-[50px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <Globe className="w-10 h-10 text-brand mb-8" />
+            <h3 className="text-2xl font-bold mb-4">Web Development</h3>
+            <p className="text-gray-400 leading-relaxed mb-8">
+              Building robust, scalable, and high-performance web applications tailored to your needs.
+            </p>
+            <a href="#" className="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-brand transition-colors">
+              Learn more <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          {/* Service 3 */}
+          <div className="group p-8 md:p-10 rounded-[32px] bg-card border border-card-border hover:border-brand/50 transition-colors relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-[50px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <BarChart3 className="w-10 h-10 text-brand mb-8" />
+            <h3 className="text-2xl font-bold mb-4">Data Analytics</h3>
+            <p className="text-gray-400 leading-relaxed mb-8">
+              Transform your raw data into actionable insights with our advanced analytics solutions.
+            </p>
+            <a href="#" className="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-brand transition-colors">
+              Learn more <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Highlight (Split Layout) */}
+      <section className="py-24 border-t border-white/5">
+        <div className="flex flex-col lg:flex-row items-center gap-16 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+          <div className="flex-1 space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+              <Shield className="w-4 h-4 text-brand" />
+              <span className="text-xs md:text-sm font-medium text-gray-300">Bank-grade Security</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+              Secure infrastructure for your peace of mind
+            </h2>
+            
+            <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
+              Our platform is built with security at its core. We employ industry-leading encryption and compliance standards to ensure your data is always protected.
+            </p>
+
+            <ul className="space-y-4">
+              {['End-to-end encryption', 'SOC2 Type II Certified', '24/7 Threat monitoring'].map((item, idx) => (
+                <li key={idx} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-brand"></div>
+                  </div>
+                  <span className="text-gray-300 font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex-1 w-full relative aspect-square md:aspect-[4/3] rounded-[40px] overflow-hidden border border-white/10 group">
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
+            <Image 
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop" 
+              alt="Secure Infrastructure" 
+              fill 
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials & Stats */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      <section className="py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto border-t border-white/5">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">
           Supported by many <br /> companies around the world
         </h2>
@@ -180,6 +275,45 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Massive CTA Section */}
+      <section className="py-32 px-6 relative overflow-hidden border-t border-white/5">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand/20 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
+          <Zap className="w-12 h-12 text-brand mb-8" />
+          <h2 className="text-6xl md:text-8xl lg:text-[100px] font-bold tracking-tighter leading-[0.9] mb-8">
+            Ready to scale <br /> your business?
+          </h2>
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mb-12">
+            Join hundreds of forward-thinking companies building the future of finance and technology with Setrex.
+          </p>
+          <a href="#" className="flex items-center gap-2 px-10 py-5 bg-brand text-black text-lg font-bold rounded-full hover:bg-[#c2eb35] hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(212,255,62,0.3)]">
+            Start your journey <ArrowRight className="w-5 h-5" />
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 md:px-12 lg:px-24 border-t border-white/5 bg-black">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex items-center gap-2">
+            <div className="w-5 h-5 bg-brand rounded-sm"></div>
+            <span className="text-2xl font-bold tracking-tight">Setrex.</span>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-400">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Careers</a>
+          </div>
+          
+          <div className="text-sm text-gray-500">
+            &copy; {new Date().getFullYear()} Setrex. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
