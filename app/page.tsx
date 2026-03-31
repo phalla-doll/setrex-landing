@@ -360,6 +360,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 max-w-3xl mx-auto border-t border-white/5">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Frequently asked questions</h2>
+          <p className="text-gray-400 text-lg">Everything you need to know about the product and billing.</p>
+        </div>
+
+        <div className="space-y-4">
+          {[
+            {
+              q: "Is there a free trial available?",
+              a: "Yes, you can try us for free for 30 days. If you want, we'll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible."
+            },
+            {
+              q: "Can I change my plan later?",
+              a: "Absolutely. You can upgrade or downgrade your plan at any time. Prorated charges will be applied automatically."
+            },
+            {
+              q: "What is your cancellation policy?",
+              a: "We understand that things change. You can cancel your plan at any time and we'll refund you prorated for the rest of the month."
+            },
+            {
+              q: "How does billing work?",
+              a: "We offer both monthly and annual billing options. Annual plans come with a 20% discount. We accept all major credit cards."
+            }
+          ].map((faq, idx) => (
+            <details key={idx} className="group bg-card border border-card-border rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between p-6 md:p-8 cursor-pointer list-none">
+                <h3 className="text-lg font-bold pr-4">{faq.q}</h3>
+                <span className="relative flex shrink-0 items-center justify-center w-8 h-8 rounded-full bg-white/5 group-open:bg-brand transition-colors duration-300">
+                  <div className="absolute w-3 h-[2px] bg-white group-open:bg-black transition-colors duration-300"></div>
+                  <div className="absolute w-[2px] h-3 bg-white group-open:bg-black group-open:rotate-90 transition-all duration-300"></div>
+                </span>
+              </summary>
+              <div className="px-6 md:px-8 pb-6 md:pb-8 text-gray-400 leading-relaxed">
+                {faq.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* Massive CTA Section */}
       <section className="py-32 px-6 relative overflow-hidden border-t border-white/5">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand/20 blur-[120px] rounded-full pointer-events-none"></div>
