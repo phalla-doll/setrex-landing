@@ -276,6 +276,90 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto border-t border-white/5">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Simple, transparent pricing</h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Choose the perfect plan for your business needs. No hidden fees.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          {/* Starter Plan */}
+          <div className="bg-card border border-card-border rounded-[40px] p-8 md:p-10 flex flex-col">
+            <h3 className="text-2xl font-bold mb-2">Starter</h3>
+            <p className="text-gray-400 mb-8">Perfect for small projects and individuals.</p>
+            <div className="mb-8">
+              <span className="text-5xl font-bold tracking-tighter">$49</span>
+              <span className="text-gray-500">/mo</span>
+            </div>
+            <ul className="space-y-4 mb-10 flex-1">
+              {['Up to 5 Projects', 'Basic Analytics', '24/7 Email Support', '1GB Storage'].map((feature, idx) => (
+                <li key={idx} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+                  </div>
+                  <span className="text-gray-300">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="#" className="w-full py-4 bg-white/5 border border-white/10 text-white text-center font-semibold rounded-full hover:bg-white/10 transition-colors">
+              Get Started
+            </a>
+          </div>
+
+          {/* Professional Plan (Highlighted) */}
+          <div className="bg-card border border-brand/50 rounded-[40px] p-8 md:p-10 flex flex-col relative overflow-hidden transform md:-translate-y-4 shadow-[0_0_40px_rgba(212,255,62,0.1)]">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand/20 blur-[80px] rounded-full pointer-events-none"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand text-black text-xs font-bold rounded-b-lg">
+              MOST POPULAR
+            </div>
+            
+            <h3 className="text-2xl font-bold mb-2 mt-4">Professional</h3>
+            <p className="text-gray-400 mb-8">Ideal for growing teams and businesses.</p>
+            <div className="mb-8">
+              <span className="text-5xl font-bold tracking-tighter text-brand">$99</span>
+              <span className="text-gray-500">/mo</span>
+            </div>
+            <ul className="space-y-4 mb-10 flex-1 relative z-10">
+              {['Unlimited Projects', 'Advanced Analytics', 'Priority Support', '100GB Storage', 'Custom Domain'].map((feature, idx) => (
+                <li key={idx} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-brand/20 flex items-center justify-center shrink-0">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand"></div>
+                  </div>
+                  <span className="text-white font-medium">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="#" className="w-full py-4 bg-brand text-black text-center font-bold rounded-full hover:bg-[#c2eb35] transition-colors relative z-10">
+              Get Started Now
+            </a>
+          </div>
+
+          {/* Enterprise Plan */}
+          <div className="bg-card border border-card-border rounded-[40px] p-8 md:p-10 flex flex-col">
+            <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
+            <p className="text-gray-400 mb-8">For large scale organizations and needs.</p>
+            <div className="mb-8">
+              <span className="text-5xl font-bold tracking-tighter">$199</span>
+              <span className="text-gray-500">/mo</span>
+            </div>
+            <ul className="space-y-4 mb-10 flex-1">
+              {['Everything in Pro', 'Dedicated Account Manager', 'Custom Integrations', 'Unlimited Storage', 'SLA'].map((feature, idx) => (
+                <li key={idx} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+                  </div>
+                  <span className="text-gray-300">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="#" className="w-full py-4 bg-white/5 border border-white/10 text-white text-center font-semibold rounded-full hover:bg-white/10 transition-colors">
+              Contact Sales
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Massive CTA Section */}
       <section className="py-32 px-6 relative overflow-hidden border-t border-white/5">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand/20 blur-[120px] rounded-full pointer-events-none"></div>
