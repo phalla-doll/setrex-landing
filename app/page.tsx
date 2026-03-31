@@ -1,7 +1,30 @@
+'use client';
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowRight, ChevronDown, ArrowUpRight, Shield, Zap, Globe, Layers, BarChart3 } from "lucide-react";
+import { ArrowRight, ChevronDown, ArrowUpRight, Shield, Zap, Globe, Layers, BarChart3, ArrowUp } from "lucide-react";
 
 export default function Home() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button after scrolling past the hero section (approx 600px)
+      if (window.scrollY > 600) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-black text-white selection:bg-brand selection:text-black overflow-hidden">
       {/* Navbar */}
@@ -440,6 +463,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-50 p-3 bg-brand text-black rounded-full shadow-[0_0_20px_rgba(212,255,62,0.3)] hover:bg-[#c2eb35] hover:scale-110 transition-all duration-300 ${
+          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
+        aria-label="Back to top"
+      >
+        <ArrowUp className="w-6 h-6" />
+      </button>
     </div>
   );
 }
